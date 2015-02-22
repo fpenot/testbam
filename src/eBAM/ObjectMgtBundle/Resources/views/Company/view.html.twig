@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Affichage de la compagnie {{id}}</title>
+    </head>
+    <body>
+		<h1>Affichage d'une compagnie</h1>
+
+		<p>
+			{% for message in app.session.flashbag.get('info') %}
+				<p>Message flash : {{ message }}</p>
+			{% endfor %}
+		</p>
+
+		<p>
+			Ici nous pourrons consulter la compagnie ayant comme id : {{ id }}<br />
+			Mais pour l'instant, nous ne savons pas encore le faire, cela viendra !
+		</p>
+		
+    </body>
+</html>

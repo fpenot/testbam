@@ -127,11 +127,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // e_bam_object_mgt_homepage
-        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'e_bam_object_mgt_homepage')), array (  '_controller' => 'eBAM\\ObjectMgtBundle\\Controller\\DefaultController::indexAction',));
-        }
-
         if (0 === strpos($pathinfo, '/company')) {
             // company_mgt_home
             if ($pathinfo === '/company') {
@@ -139,13 +134,23 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             // company_mgt_view
-            if (0 === strpos($pathinfo, '/company/view') && preg_match('#^/company/view/(?P<id>\\d{1,})$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/company/view') && preg_match('#^/company/view/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'company_mgt_view')), array (  '_controller' => 'eBAM\\ObjectMgtBundle\\Controller\\CompanyController::viewAction',));
             }
 
             // company_mgt_add
             if ($pathinfo === '/company/add') {
                 return array (  '_controller' => 'eBAM\\ObjectMgtBundle\\Controller\\CompanyController::addAction',  '_route' => 'company_mgt_add',);
+            }
+
+            // company_mgt_edit
+            if (0 === strpos($pathinfo, '/company/edit') && preg_match('#^/company/edit/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'company_mgt_edit')), array (  '_controller' => 'eBAM\\ObjectMgtBundle\\Controller\\CompanyController::editAction',));
+            }
+
+            // company_mgt_delete
+            if (0 === strpos($pathinfo, '/company/delete') && preg_match('#^/company/delete/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'company_mgt_delete')), array (  '_controller' => 'eBAM\\ObjectMgtBundle\\Controller\\CompanyController::deleteAction',));
             }
 
         }
