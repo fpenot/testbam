@@ -1,0 +1,8 @@
+e_bam_object_mgt_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: eBAMObjectMgtBundle:Default:index }
+
+creation_societe:
+    path:     /societe
+    defaults: { _controller: eBAMObjectMgtBundle:Societe:index }
+
