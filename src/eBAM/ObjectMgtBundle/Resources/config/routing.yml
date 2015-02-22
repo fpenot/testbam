@@ -1,8 +1,25 @@
-e_bam_object_mgt_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: eBAMObjectMgtBundle:Default:index }
+company_mgt_home:
+    path:     /company
+    defaults: { _controller: eBAMObjectMgtBundle:Company:index }
 
-creation_societe:
-    path:     /societe
-    defaults: { _controller: eBAMObjectMgtBundle:Societe:index }
+company_mgt_view:
+    path:     /company/view/{id}
+    defaults: { _controller: eBAMObjectMgtBundle:Company:view }
+    requirements:
+        id:   \d+
 
+company_mgt_add:
+    path:     /company/add
+    defaults: { _controller: eBAMObjectMgtBundle:Company:add }
+
+company_mgt_edit:
+    path:     /company/edit/{id}
+    defaults: { _controller: eBAMObjectMgtBundle:Company:edit }
+    requirements:
+        id:   \d+
+
+company_mgt_delete:
+    path:     /company/delete/{id}
+    defaults: { _controller: eBAMObjectMgtBundle:Company:delete }
+    requirements:
+        id:   \d+
