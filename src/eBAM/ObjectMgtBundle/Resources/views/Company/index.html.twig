@@ -1,18 +1,39 @@
-{# src/OC/PlatformBundle/Resources/views/Advert/index.html.twig #}
+{% extends "eBAMObjectMgtBundle::layout.html.twig" %}
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Bienvenue sur ma première page avec OpenClassrooms !</title>
-    </head>
-    <body>
-        <h1>Hello World !</h1>
-        
-        <p>
-            Le Hello World est un grand classique en programmation.
-            Il signifie énormément, car cela veut dire que vous avez
-            réussi à exécuter le programme pour accomplir une tâche simple :
-            afficher ce hello world !
-        </p>
-    </body>
-</html>
+{% block title %}
+  Accueil - {{ parent() }}
+{% endblock %}
+
+{% block objectmgt_body %}
+
+	<h2>Liste des sociétés</h2>
+		<p>
+			<a href="{{ path('company_mgt_add') }}" class="btn btn-default">
+				<i class="glyphicon glyphicon-plus"></i>
+				Ajouter une société
+			</a>
+		</p>
+
+	<ul>
+		{% for company in listCompanies %}
+			<li>
+				<a href="{{ path('company_mgt_view', {'id': company.id}) }}">
+					{{ company.nom }}
+				</a>
+				par {{ company.accountAdmin }}
+				<a href="{{ path('company_mgt_edit', {'id': company.id}) }}" class="btn btn-default">
+					<i class="glyphicon glyphicon-edit"></i>
+					Modifier
+				</a>
+				<a href="{{ path('company_mgt_delete', {'id': company.id}) }}" class="btn btn-danger">
+					<i class="glyphicon glyphicon-trash"></i>
+					Supprimer
+				</a>
+			</li>
+		{% else %}
+			<li>Pas (encore !) de sociétés</li>
+		{% endfor %}
+		
+	</ul>
+  
+{% endblock %}

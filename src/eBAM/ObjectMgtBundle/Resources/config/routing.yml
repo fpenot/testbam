@@ -1,5 +1,5 @@
 company_mgt_home:
-    path:     /company
+    path:     /company/
     defaults: { _controller: eBAMObjectMgtBundle:Company:index }
 
 company_mgt_view:

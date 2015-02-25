@@ -1,0 +1,25 @@
+{% extends "eBAMObjectMgtBundle::layout.html.twig" %}
+
+{% block title %}
+  Ajouter une société - {{ parent() }}
+{% endblock %}
+
+{% block objectmgt_body %}
+
+  <h2>Ajouter une société</h2>
+
+  {{ include("eBAMObjectMgtBundle:Company:form.html.twig") }}
+
+  <p>
+    Vous éditez une société déjà existante, merci de ne pas changer
+    l'esprit générale de la société déjà publiée.
+  </p>
+
+  <p>
+    <a href="{{ path('company_mgt_home') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Retour à la liste des sociétés
+    </a>
+  </p>
+
+{% endblock %}
