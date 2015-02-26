@@ -5,6 +5,7 @@ namespace eBAM\ObjectMgtBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use eBAM\IBANServiceBundle;
 
 class CompanyController extends Controller
 {
@@ -39,7 +40,16 @@ class CompanyController extends Controller
 			'id'	=> 1,
 			'accountAdmin' => 'Fabien PENOT'
 		);		
-			
+		
+		$iban = $this->container->get('e_bamiban_service.iban_service');
+		
+		// Je pars du principe que $IBAN contient le texte d'un message quelconque
+		// $IBAN = '123';
+		// if ($iban->isIBAN($IBAN)) {
+			// throw new \Exception('Votre IBAN n\'est pas correct !');
+		// }
+    
+		
 		return $this->render(
 			'eBAMObjectMgtBundle:Company:add.html.twig',
 			array('company' => $Company)

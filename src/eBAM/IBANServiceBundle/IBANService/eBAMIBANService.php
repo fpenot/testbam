@@ -1,0 +1,16 @@
+<?php
+
+namespace eBAM\IBANServiceBundle\IBANService;
+
+class eBAMIBANService
+{
+	/**
+	* Vérifie si le texte est un spam ou non
+	*
+	* @param string $IBAN
+	* @return bool
+	*/
+	public function isIBAN($IBAN) {
+		return strlen($IBAN) != 8;
+	}
+}

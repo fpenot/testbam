@@ -1,4 +1,7 @@
 services:
-#    e_bamiban_service.example:
+    e_bamiban_service.iban_service:
+        class: eBAM\IBANServiceBundle\IBANService\eBAMIBANService
+
+#    e_bam_iban_service.ibanservice:
 #        class: eBAM\IBANServiceBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]

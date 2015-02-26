@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>{% block title %}Solution BAM/eBAM{% endblock %}</title>
+	<title>{% block title %} {{ appl }} {% endblock %}</title>
 
 	{% block stylesheets %}
 		{# On charge le CSS de bootstrap depuis le site directement #}
@@ -15,7 +15,7 @@
 <body>
 	<div class="container">
 		<div id="header" class="jumbotron">
-		<h1>Mon site de gestion de comptes</h1>
+		<h1> {{ appl }} </h1>
 		<p>
 			Ce projet est propulsé par Symfony2,
 			et construit grâce au MOOC OpenClassrooms et SensioLabs.
