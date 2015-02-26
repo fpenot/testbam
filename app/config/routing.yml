@@ -1,3 +1,7 @@
+e_bamiban_service:
+    resource: "@eBAMIBANServiceBundle/Resources/config/routing.yml"
+    prefix:   /
+
 e_bam_object_mgt:
     resource: "@eBAMObjectMgtBundle/Resources/config/routing.yml"
     prefix:   /

@@ -1,0 +1,3 @@
+e_bamiban_service_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: eBAMIBANServiceBundle:Default:index }
