@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Affichage de la compagnie {{id}}</title>
+        <title>Affichage de la compagnie {{ company.id }}</title>
     </head>
     <body>
 		<h1>Affichage d'une compagnie</h1>
@@ -12,8 +12,13 @@
 			{% endfor %}
 		</p>
 
+		{% if company.countryOfOperation is defined %}
+			Voici le code pays de cette société : {{ company.countryOfOperation.countryCode }}
+		{% endif %}
+		
+		
 		<p>
-			Ici nous pourrons consulter la compagnie ayant comme id : {{ id }}<br />
+			Ici nous pourrons consulter la compagnie ayant comme id : {{ company.id }}<br />
 			Mais pour l'instant, nous ne savons pas encore le faire, cela viendra !
 		</p>
 		

@@ -1,0 +1,4 @@
+services:
+#    e_bam_ref_data.example:
+#        class: eBAM\RefDataBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

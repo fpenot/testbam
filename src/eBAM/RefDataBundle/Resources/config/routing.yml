@@ -1,0 +1,3 @@
+e_bam_ref_data_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: eBAMRefDataBundle:Default:index }
